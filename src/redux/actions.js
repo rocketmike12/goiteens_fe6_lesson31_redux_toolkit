@@ -21,3 +21,5 @@ export const toggleCompleted = createAction("tasks/toggle", (id) => {
 		payload: id
 	};
 });
+
+export const toggleFilter = createAction("filter/toggle");
