@@ -1,0 +1,46 @@
+@import "../../sass/base/base.scss";
+
+.todo-editor {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	height: 48px;
+	width: 512px;
+
+	&__input {
+		height: 100%;
+		width: 432px;
+		padding-left: 16px;
+
+		background-color: transparent;
+		outline: 2px solid $fg;
+		color: $fg;
+
+        font-size: 16px;
+        font-weight: 400;
+
+		&::placeholder {
+			color: rgba($fg, 0.8);
+		}
+
+        &:hover, &:focus {
+			background-color: rgba($fg, 0.1);
+        }
+	}
+
+	&__button {
+		height: 100%;
+		width: 64px;
+
+		background-color: transparent;
+		outline: 2px solid $fg;
+		color: $fg;
+
+        font-size: 16px;
+        font-weight: 400;
+
+        &:hover {
+			background-color: rgba($fg, 0.1);
+        }
+	}
+}

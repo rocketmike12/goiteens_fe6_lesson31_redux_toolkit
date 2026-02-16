@@ -1,0 +1,33 @@
+@import "../abstracts/variables.scss";
+
+:root {
+	font-family: Montserrat;
+	font-weight: 400;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	color: $fg;
+}
+
+body {
+	margin: 0;
+	padding: 50px;
+	min-height: 100vh;
+
+	background-color: $bg;
+}
+
+ul {
+	list-style: none;
+}
+
+button,
+input {
+	margin: 0;
+
+	border: none;
+	outline: none;
+
+	font-family: inherit;
+}

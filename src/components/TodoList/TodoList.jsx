@@ -4,6 +4,8 @@ import { toggleFilter } from "../../redux/actions";
 
 import { Todo } from "./Todo";
 
+import styles from "./TodoList.module.scss";
+
 export const TodoList = function () {
 	const dispatch = useDispatch();
 
@@ -16,16 +18,18 @@ export const TodoList = function () {
 
 	return (
 		<>
-			<div>
-				<p>show completed</p>
-				<input type="checkbox" defaultChecked={filter} onChange={handleFilter} />
-			</div>
+			<div className={styles["container"]}>
+				<div className={styles["filter"]}>
+					<p className={styles["filter__text"]}>hide completed</p>
+					<input type="checkbox" defaultChecked={filter} onChange={handleFilter} className={styles["filter__text"]} />
+				</div>
 
-			<ul>
-				{tasks.map((task) => (
-					<Todo {...task} key={task.id} />
-				))}
-			</ul>
+				<ul className={styles["task-list"]}>
+					{tasks.map((task) => (
+						<Todo {...task} key={task.id} />
+					))}
+				</ul>
+			</div>
 		</>
 	);
 };

@@ -22,7 +22,7 @@ export const tasksReducer = createReducer(tasksInitialState, (builder) => {
 	);
 });
 
-const filterInitialState = true;
+const filterInitialState = false;
 
 export const filterReducer = createReducer(filterInitialState, (builder) => {
 	builder.addCase(toggleFilter, (state) => !state);
