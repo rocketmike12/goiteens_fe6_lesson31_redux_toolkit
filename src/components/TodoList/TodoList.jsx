@@ -21,7 +21,10 @@ export const TodoList = function () {
 			<div className={styles["container"]}>
 				<div className={styles["filter"]}>
 					<p className={styles["filter__text"]}>hide completed</p>
-					<input type="checkbox" defaultChecked={filter} onChange={handleFilter} className={styles["filter__text"]} />
+					<div className={styles["filter__checkbox"]}>
+						<input type="checkbox" checked={filter} onChange={handleFilter} className={styles["filter__checkbox__input"]} />
+						<span className={styles["filter__checkbox__checkmark"]}></span>
+					</div>
 				</div>
 
 				<ul className={styles["task-list"]}>

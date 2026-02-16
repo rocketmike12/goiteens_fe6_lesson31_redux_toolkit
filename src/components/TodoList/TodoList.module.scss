@@ -25,6 +25,71 @@
 		font-size: 16px;
 		font-weight: 400;
 	}
+
+	&__checkbox {
+		display: block;
+		position: relative;
+		margin-bottom: 30px;
+		margin-right: 30px;
+		margin-left: 5px;
+		margin-top: 5px;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		&__input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			cursor: pointer;
+			height: 25px;
+			width: 25px;
+			z-index: 1;
+		}
+
+		&__checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: $bg;
+			outline: 1px solid $fg;
+		}
+
+		&:hover &__input:not(:checked) ~ &__checkmark {
+			background-color: rgba($fg, 0.1);
+		}
+
+		&__input:checked ~ &__checkmark {
+			background-color: $fg;
+		}
+
+		&__checkmark:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+
+		&__input:checked ~ &__checkmark:after {
+			display: block;
+		}
+
+		& &__checkmark:after {
+			left: 10px;
+			top: 7px;
+			width: 5px;
+			height: 10px;
+			border: 1px solid $bg;
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	}
 }
 
 .task-list {
@@ -45,8 +110,73 @@
 		gap: 16px;
 	}
 
-	&__checkbox:checked ~ &__text {
-		text-decoration: line-through;
+	&__checkbox {
+		display: block;
+		position: relative;
+		margin-bottom: 30px;
+		margin-right: 30px;
+		margin-left: 5px;
+		margin-top: 5px;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		&__input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			cursor: pointer;
+			height: 25px;
+			width: 25px;
+			z-index: 1;
+		}
+
+		&__checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: $bg;
+			outline: 1px solid $fg;
+		}
+
+		&:hover &__input:not(:checked) ~ &__checkmark {
+			background-color: rgba($fg, 0.1);
+		}
+
+		&__input:checked ~ &__checkmark {
+			background-color: $fg;
+		}
+
+		&__checkmark:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+
+		&__input:checked ~ &__checkmark:after {
+			display: block;
+		}
+
+		& &__checkmark:after {
+			left: 10px;
+			top: 7px;
+			width: 5px;
+			height: 10px;
+			border: 1px solid $bg;
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+        &:has(&__input:checked) ~ p {
+            text-decoration: line-through;
+        }
 	}
 
 	&__text {
@@ -59,10 +189,11 @@
 	}
 
 	&__delete {
-		padding: 4px 8px;
+        height: 25px;
+        padding: 0 8px;
 
 		background-color: transparent;
-		outline: 2px solid $fg;
+		outline: 1px solid $fg;
 		color: $fg;
 
 		font-size: 16px;

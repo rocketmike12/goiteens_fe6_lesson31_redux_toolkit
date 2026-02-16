@@ -19,7 +19,10 @@ export const Todo = function ({ id, text, completed }) {
 		<>
 			<li className={styles["task-list__item"]}>
 				<div className={styles["task-list__wrap"]}>
-					<input type="checkbox" defaultChecked={completed} onChange={handleComplete} className={styles["task-list__checkbox"]} />
+					<div className={styles["task-list__checkbox"]}>
+						<input type="checkbox" checked={completed} onChange={handleComplete} className={styles["task-list__checkbox__input"]} />
+						<span className={styles["task-list__checkbox__checkmark"]}></span>
+					</div>
 					<p className={styles["task-list__text"]}>{text}</p>
 				</div>
 				<button onClick={handleDelete} className={styles["task-list__delete"]}>
